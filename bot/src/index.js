@@ -28,6 +28,8 @@ const client = new Client({
     GatewayIntentBits.GuildWebhooks,
     GatewayIntentBits.MessageContent,
     GatewayIntentBits.GuildPresences,
+    GatewayIntentBits.GuildEmojisAndStickers,
+    GatewayIntentBits.GuildInvites,
   ],
   partials: [Partials.Channel, Partials.Message, Partials.GuildMember],
   allowedMentions: { parse: ["users"], repliedUser: false },

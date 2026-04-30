@@ -95,7 +95,11 @@
         ]
       },
       "whitelistedUsers": [],
-      "whitelistedRoles": []
+      "whitelistedRoles": [],
+      "ownerAlerts": {
+        "enabled": true,
+        "minThrottleMs": 1500
+      }
     }
   },
   "warnings": {}

@@ -80,6 +80,11 @@ export const DEFAULT_CONFIG = {
     ],
   },
 
+  ownerAlerts: {
+    enabled: true,
+    minThrottleMs: 1500,
+  },
+
   whitelistedUsers: [],
   whitelistedRoles: [],
 };
