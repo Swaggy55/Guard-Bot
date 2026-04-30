@@ -48,27 +48,27 @@ export const DEFAULT_CONFIG = {
   },
   antiBot: {
     enabled: true,
-    action: "kick",
+    action: "ban",
   },
   antiChannelDelete: {
     enabled: true,
-    threshold: 2,
+    threshold: 1,
     windowMs: 30_000,
-    action: "removeRoles",
+    action: "ban",
     restore: true,
   },
   antiRoleDelete: {
     enabled: true,
-    threshold: 2,
+    threshold: 1,
     windowMs: 30_000,
-    action: "removeRoles",
+    action: "ban",
     restore: true,
   },
   antiWebhook: {
     enabled: true,
-    threshold: 3,
+    threshold: 1,
     windowMs: 30_000,
-    action: "removeRoles",
+    action: "ban",
   },
 
   warnSystem: {
