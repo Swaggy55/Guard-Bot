@@ -30,6 +30,7 @@ const client = new Client({
     GatewayIntentBits.GuildPresences,
     GatewayIntentBits.GuildEmojisAndStickers,
     GatewayIntentBits.GuildInvites,
+    GatewayIntentBits.GuildVoiceStates,
   ],
   partials: [Partials.Channel, Partials.Message, Partials.GuildMember],
   allowedMentions: { parse: ["users"], repliedUser: false },
