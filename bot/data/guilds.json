@@ -100,6 +100,208 @@
         "enabled": true,
         "minThrottleMs": 1500
       }
+    },
+    "1494415694660636752": {
+      "prefix": "!",
+      "logsChannelId": null,
+      "muteRoleId": null,
+      "antiRaid": {
+        "enabled": true,
+        "joinThreshold": 8,
+        "joinWindowMs": 10000,
+        "action": "kick",
+        "accountAgeMinDays": 7
+      },
+      "antiSpam": {
+        "enabled": true,
+        "messageThreshold": 6,
+        "windowMs": 5000,
+        "duplicateThreshold": 3,
+        "action": "timeout",
+        "timeoutMs": 300000
+      },
+      "antiMention": {
+        "enabled": true,
+        "maxMentions": 5,
+        "action": "timeout",
+        "timeoutMs": 600000
+      },
+      "antiLink": {
+        "enabled": true,
+        "allowDiscordInvites": false,
+        "whitelist": [
+          "tenor.com",
+          "giphy.com"
+        ],
+        "action": "delete"
+      },
+      "antiBadwords": {
+        "enabled": true,
+        "words": [
+          "fuck",
+          "shit",
+          "bitch",
+          "asshole",
+          "bastard",
+          "dick",
+          "cunt",
+          "nigger",
+          "faggot",
+          "retard",
+          "slut",
+          "whore"
+        ],
+        "action": "delete"
+      },
+      "antiBot": {
+        "enabled": true,
+        "action": "ban"
+      },
+      "antiChannelDelete": {
+        "enabled": true,
+        "threshold": 1,
+        "windowMs": 30000,
+        "action": "ban",
+        "restore": true
+      },
+      "antiRoleDelete": {
+        "enabled": true,
+        "threshold": 1,
+        "windowMs": 30000,
+        "action": "ban",
+        "restore": true
+      },
+      "antiWebhook": {
+        "enabled": true,
+        "threshold": 1,
+        "windowMs": 30000,
+        "action": "ban"
+      },
+      "warnSystem": {
+        "enabled": true,
+        "thresholds": [
+          {
+            "count": 3,
+            "action": "timeout",
+            "durationMs": 3600000
+          },
+          {
+            "count": 5,
+            "action": "kick"
+          },
+          {
+            "count": 7,
+            "action": "ban"
+          }
+        ]
+      },
+      "ownerAlerts": {
+        "enabled": true,
+        "minThrottleMs": 1500
+      },
+      "whitelistedUsers": [],
+      "whitelistedRoles": []
+    },
+    "1442598718950998168": {
+      "prefix": "!",
+      "logsChannelId": null,
+      "muteRoleId": null,
+      "antiRaid": {
+        "enabled": true,
+        "joinThreshold": 8,
+        "joinWindowMs": 10000,
+        "action": "kick",
+        "accountAgeMinDays": 7
+      },
+      "antiSpam": {
+        "enabled": true,
+        "messageThreshold": 6,
+        "windowMs": 5000,
+        "duplicateThreshold": 3,
+        "action": "timeout",
+        "timeoutMs": 300000
+      },
+      "antiMention": {
+        "enabled": true,
+        "maxMentions": 5,
+        "action": "timeout",
+        "timeoutMs": 600000
+      },
+      "antiLink": {
+        "enabled": true,
+        "allowDiscordInvites": false,
+        "whitelist": [
+          "tenor.com",
+          "giphy.com"
+        ],
+        "action": "delete"
+      },
+      "antiBadwords": {
+        "enabled": true,
+        "words": [
+          "fuck",
+          "shit",
+          "bitch",
+          "asshole",
+          "bastard",
+          "dick",
+          "cunt",
+          "nigger",
+          "faggot",
+          "retard",
+          "slut",
+          "whore"
+        ],
+        "action": "delete"
+      },
+      "antiBot": {
+        "enabled": true,
+        "action": "ban"
+      },
+      "antiChannelDelete": {
+        "enabled": true,
+        "threshold": 1,
+        "windowMs": 30000,
+        "action": "ban",
+        "restore": true
+      },
+      "antiRoleDelete": {
+        "enabled": true,
+        "threshold": 1,
+        "windowMs": 30000,
+        "action": "ban",
+        "restore": true
+      },
+      "antiWebhook": {
+        "enabled": true,
+        "threshold": 1,
+        "windowMs": 30000,
+        "action": "ban"
+      },
+      "warnSystem": {
+        "enabled": true,
+        "thresholds": [
+          {
+            "count": 3,
+            "action": "timeout",
+            "durationMs": 3600000
+          },
+          {
+            "count": 5,
+            "action": "kick"
+          },
+          {
+            "count": 7,
+            "action": "ban"
+          }
+        ]
+      },
+      "ownerAlerts": {
+        "enabled": true,
+        "minThrottleMs": 1500
+      },
+      "whitelistedUsers": [],
+      "whitelistedRoles": []
     }
   },
   "warnings": {}

@@ -10,6 +10,8 @@
     "deploy": "node src/handlers/deployCommands.js"
   },
   "dependencies": {
-    "discord.js": "^14.16.3"
+    "@discordjs/voice": "^0.19.2",
+    "discord.js": "^14.16.3",
+    "tweetnacl": "^1.0.3"
   }
 }
