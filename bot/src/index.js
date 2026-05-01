@@ -47,7 +47,7 @@ async function main() {
     logger.warn("DISCORD_CLIENT_ID not set — slash commands will not be deployed");
   }
 
-  await client.login(TOKEN);
+  client.login(process.env.TOKEN);
 }
 
 process.on("unhandledRejection", (err) => logger.error("Unhandled rejection:", err));

@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: aegis-protection-bot
+    runtime: node
+    rootDir: bot
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: DISCORD_CLIENT_ID
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+    autoDeploy: true
