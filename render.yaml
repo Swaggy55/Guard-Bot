@@ -2,8 +2,7 @@ services:
   - type: worker
     name: aegis-protection-bot
     runtime: node
-    rootDir: bot
-    buildCommand: npm install
+    buildCommand: npm install --ignore-scripts
     startCommand: node index.js
     envVars:
       - key: DISCORD_TOKEN
