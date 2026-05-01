@@ -5,6 +5,8 @@ services:
     buildCommand: npm install --ignore-scripts
     startCommand: node index.js
     envVars:
+      - key: TOKEN
+        sync: false
       - key: DISCORD_TOKEN
         sync: false
       - key: DISCORD_CLIENT_ID

@@ -7,11 +7,11 @@ import { deployCommands } from "./handlers/deployCommands.js";
 import { logger } from "./utils/logger.js";
 import { BRAND, BOT_VERSION } from "./config.js";
 
-const TOKEN = process.env.DISCORD_TOKEN;
+const TOKEN = process.env.TOKEN || process.env.DISCORD_TOKEN;
 const CLIENT_ID = process.env.DISCORD_CLIENT_ID;
 
 if (!TOKEN) {
-  logger.error("DISCORD_TOKEN env var is required");
+  logger.error("TOKEN (or DISCORD_TOKEN) env var is required");
   process.exit(1);
 }
 
@@ -64,7 +64,7 @@ async function main() {
 
   if (CLIENT_ID) {
     try {
-      await deployCommands({ token: TOKEN, clientId: CLIENT_ID });
+      await deployCommands({ token: process.env.TOKEN || process.env.DISCORD_TOKEN, clientId: CLIENT_ID });
     } catch (err) {
       logger.warn(`Slash command deploy skipped: ${err.message}`);
     }
@@ -73,7 +73,7 @@ async function main() {
   }
 
   try {
-    await client.login(TOKEN);
+    await client.login(process.env.TOKEN || process.env.DISCORD_TOKEN);
   } catch (err) {
     logger.error(`Discord login failed: ${err.message} — HTTP server is still running`);
   }
