@@ -153,6 +153,16 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      '@discordjs/voice':
+        specifier: ^0.19.2
+        version: 0.19.2
+      discord.js:
+        specifier: ^14.16.3
+        version: 14.26.3
+      tweetnacl:
+        specifier: ^1.0.3
+        version: 1.0.3
     devDependencies:
       prettier:
         specifier: ^3.8.1
@@ -404,6 +414,9 @@ importers:
       discord.js:
         specifier: ^14.16.3
         version: 14.26.3
+      express:
+        specifier: ^5.2.1
+        version: 5.2.1
       tweetnacl:
         specifier: ^1.0.3
         version: 1.0.3

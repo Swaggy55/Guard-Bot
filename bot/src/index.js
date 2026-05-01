@@ -1,4 +1,5 @@
 import { Client, GatewayIntentBits, Partials } from "discord.js";
+import express from "express";
 import { initStorage } from "./storage.js";
 import { loadCommands } from "./handlers/commandHandler.js";
 import { loadEvents } from "./handlers/eventHandler.js";
@@ -36,18 +37,46 @@ const client = new Client({
   allowedMentions: { parse: ["users"], repliedUser: false },
 });
 
+function startHttpServer() {
+  const app = express();
+  const port = process.env.PORT || 3000;
+
+  app.get("/", (_req, res) => {
+    res.json({
+      status: "online",
+      bot: BRAND.name,
+      version: BOT_VERSION,
+      uptime: Math.floor(process.uptime()),
+    });
+  });
+
+  app.listen(port, () => {
+    logger.success(`HTTP keepalive listening on port ${port}`);
+  });
+}
+
 async function main() {
+  startHttpServer();
+
   await initStorage();
   await loadEvents(client);
   await loadCommands(client);
 
   if (CLIENT_ID) {
-    await deployCommands({ token: TOKEN, clientId: CLIENT_ID });
+    try {
+      await deployCommands({ token: TOKEN, clientId: CLIENT_ID });
+    } catch (err) {
+      logger.warn(`Slash command deploy skipped: ${err.message}`);
+    }
   } else {
     logger.warn("DISCORD_CLIENT_ID not set — slash commands will not be deployed");
   }
 
-  client.login(process.env.TOKEN);
+  try {
+    await client.login(TOKEN);
+  } catch (err) {
+    logger.error(`Discord login failed: ${err.message} — HTTP server is still running`);
+  }
 }
 
 process.on("unhandledRejection", (err) => logger.error("Unhandled rejection:", err));
@@ -64,6 +93,5 @@ process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 
 main().catch((err) => {
-  logger.error("Fatal startup error:", err);
-  process.exit(1);
+  logger.error("Fatal startup error:", err.message ?? err);
 });
